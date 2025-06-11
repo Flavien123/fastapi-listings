@@ -1,0 +1,20 @@
+[project]
+name = "test-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "celery>=5.5.3",
+    "fastapi[standard]>=0.115.12",
+    "greenlet>=3.2.2",
+    "kombu>=5.5.4",
+    "mypy>=1.16.0",
+    "pydantic-settings>=2.9.1",
+    "pytest>=8.4.0",
+    "python-dotenv>=1.1.0",
+    "redis>=6.2.0",
+    "ruff>=0.11.12",
+    "sqlalchemy>=2.0.41",
+]
