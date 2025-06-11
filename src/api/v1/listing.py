@@ -6,7 +6,7 @@ from services.listing import get_listing_by_id, get_all_listings, create_new_lis
 
 from db.session import get_db
 
-router = APIRouter(prefix="/listings", tags=["Listings"])
+router = APIRouter()
 
 @router.get("/{listing_id}", response_model=ListingResponse)
 async def get_listing(listing_id: int, db: AsyncSession = Depends(get_db)):
