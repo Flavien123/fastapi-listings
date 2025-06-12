@@ -28,7 +28,7 @@ To set up and run this project locally, follow these steps:
 
 2.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/Flavien123/test-project
+    git clone https://github.com/Flavien123/fastapi-listings
     cd test-project
     ```
 
