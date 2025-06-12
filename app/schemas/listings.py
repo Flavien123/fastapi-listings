@@ -59,3 +59,4 @@ class ListingUpdate(ListingsBase):
         description="New city for the object (optional).",
     )
 
+
