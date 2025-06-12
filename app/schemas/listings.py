@@ -6,25 +6,25 @@ from pydantic import BaseModel, Field
 
 class ListingsBase(BaseModel):
     title: str = Field(
-        examples=["Уютная квартира в центре"],
-        description="Заголовок объявления, до 200 символов.",
+        examples=["Cozy apartment in the city center"],
+        description="Listing title, up to 200 characters.",
     )
     discription: str = Field(
         examples=[
-            "Просторная квартира с новым ремонтом и видом на парк. Рядом вся инфраструктура."
+            "Spacious apartment with new renovation and park views. All infrastructure nearby."
         ],
-        description="Подробное описание объявления, до 1000 символов.",
+        description="Detailed listing description, up to 1000 characters.",
     )
-    price: int = Field(examples=[15000000], description="Цена объекта в тенге.")
+    price: int = Field(examples=[15000000], description="Price of the object.")
     city: str = Field(
-        examples=["Астана"], description="Город, в котором находится объект."
+        examples=["New-York"], description="City where the object is located."
     )
 
 
 class ListingResponse(ListingsBase):
-    id: int = Field(examples=[1], description="Уникальный идентификатор объявления.")
+    id: int = Field(examples=[1], description="Unique listing identifier.")
     created_at: datetime = Field(
-        examples=[datetime.now()], description="Дата и время создания объявления."
+        examples=[datetime.now()], description="Date and time of listing creation."
     )
     title: str
     discription: str
@@ -42,19 +42,20 @@ class ListingCreate(ListingsBase):
 class ListingUpdate(ListingsBase):
     title: Optional[str] = Field(
         None,
-        examples=["Обновленный заголовок"],
-        description="Новый заголовок объявления (необязательно).",
+        examples=["Updated title"],
+        description="New listing title (optional).",
     )
     discription: Optional[str] = Field(
         None,
-        examples=["Обновленное описание с новыми деталями."],
-        description="Новое описание объявления (необязательно).",
+        examples=["Updated description with new details."],
+        description="New listing description (optional).",
     )
     price: Optional[int] = Field(
-        None, examples=[16000000], description="Новая цена объекта (необязательно)."
+        None, examples=[16000000], description="New object price (optional)."
     )
     city: Optional[str] = Field(
         None,
-        examples=["Алматы"],
-        description="Новый город для объекта (необязательно).",
+        examples=["Berlin"],
+        description="New city for the object (optional).",
     )
+
