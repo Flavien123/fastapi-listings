@@ -75,4 +75,4 @@ async def delete_listing(listing_id: int, db: AsyncSession = Depends(database.ge
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
         )
-    return
+    return result
