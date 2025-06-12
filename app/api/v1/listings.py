@@ -23,16 +23,21 @@ async def get_listings(
 
 
 @router.get("/{listing_id}", response_model=ListingResponse)
-async def get_listing(listing_id: int, db: AsyncSession = Depends(database.get_db)):
+async def get_listing(
+    listing_id: int, db: AsyncSession = Depends(database.get_db)
+):
     result = await listing_crud.get_by_id(db, listing_id)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing was not found",
         )
     return result
 
 
-@router.post("/", response_model=ListingResponse, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/", response_model=ListingResponse, status_code=status.HTTP_201_CREATED
+)
 async def create_listing(
     listing_data: ListingCreate, db: AsyncSession = Depends(database.get_db)
 ):
@@ -49,7 +54,8 @@ async def update_listing_partial(
     result = await listing_crud.update_by_id(db, listing_id, listing_data)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing was not found",
         )
     return result
 
@@ -60,19 +66,25 @@ async def update_listing_full(
     listing_data: ListingCreate,
     db: AsyncSession = Depends(database.get_db),
 ):
-    result = await listing_crud.update_by_id(db, listing_id, listing_data.model_dump())
+    result = await listing_crud.update_by_id(
+        db, listing_id, listing_data.model_dump()
+    )
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing was not found",
         )
     return result
 
 
 @router.delete("/{listing_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_listing(listing_id: int, db: AsyncSession = Depends(database.get_db)):
+async def delete_listing(
+    listing_id: int, db: AsyncSession = Depends(database.get_db)
+):
     result = await listing_crud.delete_by_id(db, listing_id)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing was not found",
         )
     return result
