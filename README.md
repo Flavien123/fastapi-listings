@@ -18,11 +18,7 @@ This project is a simple web service built with FastAPI for managing property li
 - **ASGI Server:** Uvicorn
 - **Package Management:** `uv`
 - **Configuration:** Pydantic Settings
-- **Background Tasks:** Celery (dependency included, but not fully implemented in the core logic yet)
-- **Message Broker:** Redis (dependency included, likely for Celery, but not fully implemented in the core logic yet)
-- **Testing:** pytest
 - **Linting/Formatting:** Ruff
-- **Type Checking:** Mypy
 
 ## Installation
 
@@ -32,10 +28,9 @@ To set up and run this project locally, follow these steps:
 
 2.  **Clone the Repository:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/Flavien123/test-project
     cd test-project
     ```
-    Replace `<repository_url>` with the actual URL of your repository.
 
 3.  **Create and Activate a Virtual Environment:**
     ```bash
@@ -49,20 +44,10 @@ To set up and run this project locally, follow these steps:
     uv sync
     ```
 
-5.  **Environment Variables:**
-    Create a `.env` file in the project root directory (`test-project/.env`). Currently, the project uses default settings defined in `app/core/config.py`, but you can override them here. For example, you could specify a different database URL:
-    ```dotenv
-    # Example .env content (optional for default SQLite)
-    # DB_URL="postgresql+asyncpg://user:password@host:port/dbname"
-    ```
-
-6.  **Run Database Migrations (Optional):**
-    The project includes `alembic.ini`, suggesting Alembic might be used for database migrations. If migrations are set up, you would typically run them now. (Note: Alembic is listed as a dependency in `pyproject.toml`, but the full setup is not evident from the provided files. You may need to initialize and configure Alembic if you plan to use it for migrations beyond the initial model creation handled by `init_models` in `main.py`).
-
-7.  **Run the Application:**
+5.  **Run the Application:**
     Start the FastAPI application using Uvicorn:
     ```bash
-    uvicorn main:app --reload
+    uv run app/main.py
     ```
     The application will run at `http://127.0.0.1:8000` by default.
 
