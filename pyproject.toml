@@ -1,7 +1,7 @@
 [project]
-name = "test-project"
+name = "fastapi-listings"
 version = "0.1.0"
-description = "Add your description here"
+description = "FastAPI Listing Service"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
