@@ -1,3 +1,5 @@
+![Routers image](assets/routers.png)
+
 # FastAPI Listing Service
 
 This project is a simple web service built with FastAPI for managing property listings. It provides a RESTful API to perform standard CRUD (Create, Read, Update, Delete) operations on listing data, backed by a SQLite database using SQLAlchemy.
