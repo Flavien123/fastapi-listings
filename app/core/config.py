@@ -24,6 +24,7 @@ class Run(BaseModel):
 class Env(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
+
 class Cors(BaseModel):
     allow_origins: list[str] = [
         "http://localhost",
