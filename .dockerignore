@@ -9,4 +9,3 @@ wheels/
 .env
 
 db.sqlite3
-test.py
