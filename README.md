@@ -51,13 +51,6 @@ To set up and run this project locally, follow these steps:
     ```
     The application will run at `http://127.0.0.1:8000` by default.
 
-5.  **Run the Application:**
-    Start the FastAPI application using Uvicorn:
-    ```bash
-    uv run app/main.py
-    ```
-    The application will run at `http://127.0.0.1:8000` by default.
-
 ## API Endpoints
 
 The API is available under the `/api/v1` prefix. Here are the main endpoints for managing listings:
