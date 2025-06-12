@@ -127,8 +127,9 @@ test-project/
 ├── pyproject.toml
 ├── test.py
 └── uv.lock
+```
 
--   'app/main.py`: Entry point of the FastAPI application.
+-   `app/main.py`: Entry point of the FastAPI application.
 -   `app/api/`: Contains API routers.
 -   `app/api/v1/listings.py`: Defines the endpoints for listing operations.
 -   `app/core/config.py`: Handles project settings using Pydantic Settings.
