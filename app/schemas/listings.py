@@ -58,5 +58,3 @@ class ListingUpdate(ListingsBase):
         examples=["Berlin"],
         description="New city for the object (optional).",
     )
-
-

@@ -12,7 +12,7 @@ class Db(BaseModel):
 
 
 class Names(BaseModel):
-    title: str = "FastAPI"
+    title: str = "FastAPI Listings"
 
 
 class Run(BaseModel):

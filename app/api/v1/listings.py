@@ -27,7 +27,7 @@ async def get_listing(listing_id: int, db: AsyncSession = Depends(database.get_d
     result = await listing_crud.get_by_id(db, listing_id)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Объявление не найдено"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
         )
     return result
 
@@ -49,7 +49,7 @@ async def update_listing_partial(
     result = await listing_crud.update_by_id(db, listing_id, listing_data)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Объявление не найдено"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
         )
     return result
 
@@ -63,7 +63,7 @@ async def update_listing_full(
     result = await listing_crud.update_by_id(db, listing_id, listing_data.model_dump())
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Объявление не найдено"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
         )
     return result
 
@@ -73,6 +73,6 @@ async def delete_listing(listing_id: int, db: AsyncSession = Depends(database.ge
     result = await listing_crud.delete_by_id(db, listing_id)
     if not result:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Объявление не найдено"
+            status_code=status.HTTP_404_NOT_FOUND, detail="Listing was not found"
         )
     return
